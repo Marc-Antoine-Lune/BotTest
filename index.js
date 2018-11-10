@@ -1,15 +1,15 @@
 'use strict'
 
-const express =require('express')
-const bodyParser =require('bodyParser')
-const request = require('resquest')
+import express from 'express';  
+import { urlencoded, json } from 'bodyParser';
+import request from 'resquest';
 
 const app = express()
 
 app.set('port', (process.env.PORT || 5000))
 
-app.use(bodyParser.urlencoded({extended: false}))
-app.use(bodyParser.json())
+app.use(urlencoded({extended: false}))
+app.use(json())
 
 //ROUTES
 app.get('/', function(req, res){
